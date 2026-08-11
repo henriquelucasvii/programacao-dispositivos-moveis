@@ -30,11 +30,7 @@ A disciplina aborda os fundamentos e as práticas do desenvolvimento de aplicaç
 - **Android Studio / VS Code** — ambientes de desenvolvimento;
 - **Git & GitHub** — controle de versão e hospedagem do repositório;
 
-## 👤 Autor
-
-Desenvolvido como parte das atividades acadêmicas da disciplina de Programação de Dispositivos Móveis — 4º Período.
-
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Sinta-se à vontade e livre para utilizar como referência de estudo.
 
