@@ -1,25 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:markim_da_serraria/screens/home_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MarkinDaSerrariaApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MarkinDaSerrariaApp extends StatefulWidget {
+  const MarkinDaSerrariaApp({super.key});
+  @override
+  State<MarkinDaSerrariaApp> createState() => _MarkinDaSerrariaAppState();
+}
 
-  // This widget is the root of your application.
+class _MarkinDaSerrariaAppState extends State<MarkinDaSerrariaApp> {
+  ThemeMode _themeMode = ThemeMode.light;
+  void _alterarTema() {
+    setState(() {
+      _themeMode = _themeMode == ThemeMode.light
+          ? ThemeMode.dark
+          : ThemeMode.light;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Markin da Serraria',
+      debugShowCheckedModeBanner: false,
+      themeMode: _themeMode,
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.blue.shade900),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.brown,
+          brightness: Brightness.light,
+        ),
+        useMaterial3: true,
+      ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.brown,
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
       ),
       home: HomeScreen(
-        temaEscuro: true, 
-        onThemeChanged: () => null,
-        ),
+        onThemeChanged: _alterarTema,
+        temaEscuro: _themeMode == ThemeMode.dark,
+      ),
     );
   }
 }

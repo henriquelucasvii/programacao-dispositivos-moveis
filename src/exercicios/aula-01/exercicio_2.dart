@@ -8,21 +8,21 @@ mixin Auditoria {
 
 class Produto with Auditoria {
   // Atributos Private
-  int _id;
-  String _nome;
-  double _preco;
-  String _categoria;
+  int id;
+  String nome;
+  double preco;
+  String categoria;
   
-  Produto(int this._id, String this._nome, double this._preco, String this._categoria);
+  Produto(int this.id, String this.nome, double this.preco, String this.categoria);
   
-  Produto.promocao(int this._id, String this._nome, double this._preco, String this._categoria) {
-    this._preco *= 0.8;
+  Produto.promocao(int this.id, String this.nome, double this.preco, String this.categoria) {
+    this.preco *= 0.8;
   }
   
   double getAcesso() {
     
     registrarAcesso();
-    return this._preco;
+    return this.preco;
   }
 }
 
